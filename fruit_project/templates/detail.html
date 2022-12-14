@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+           <img src="{{fruit.image.url}}" height="300" width="300">
+        </div>
+        <div class="col-md-6">
+            <h2>{{fruit.name}}</h2>
+            <h5>{{fruit.desc}}</h5>
+            <h5>{{fruit.price}}</h5>
+            <a class="btn btn-warning" href="{% url 'fruit_app:update' fruit.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'fruit_app:remove' fruit.id %}">Remove</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

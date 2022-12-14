@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for i in fruits_list %}
+        <div class="card-deck mt-5">
+        <div class="col-md-6">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" height="250">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <p class="card-text">{{i.desc}}</p>
+                    <p class="card-text">{{i.price}}</p>
+                    <a href="{% url 'fruit_app:detail' i.id %}" class="btn btn-primary">view details</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
